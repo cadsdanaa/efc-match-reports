@@ -15,7 +15,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: ${AWS_GITHUB_DEPLOY_ROLE}
+          role-to-assume: ${{ secrets.AWS_GITHUB_DEPLOY_ROLE }}
           aws-region: us-east-1
       - name: Install Dependencies
         run: yarn
