@@ -1,0 +1,24 @@
+name: Deploy to AWS
+on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  aws_cdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${AWS_GITHUB_DEPLOY_ROLE}
+      - name: Install Dependencies
+        run: yarn
+      - name: Synth stack
+        run: yarn cdk synth
+      - name: Deploy stack
+        run: yarn cdk deploy --all --require-approval never
