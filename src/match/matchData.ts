@@ -80,32 +80,6 @@ export interface PurpleStats {
     Assists?:                           Stat;
 }
 
-export interface AccurateCrosses {
-    key:   AccurateCrossesKey;
-    value: string;
-}
-
-export enum AccurateCrossesKey {
-    AccurateCrosses = "accurate_crosses",
-    AccuratePasses = "accurate_passes",
-    AerialsWon = "aerials_won",
-    DribblesSucceeded = "dribbles_succeeded",
-    ExpectedAssists = "expected_assists",
-    ExpectedGoals = "expected_goals",
-    ExpectedGoalsOnTargetFaced = "expected_goals_on_target_faced",
-    ExpectedGoalsOnTargetVariant = "expected_goals_on_target_variant",
-    FantasyPoints = "fantasy_points",
-    GroundDuelsWon = "ground_duels_won",
-    LongBallsAccurate = "long_balls_accurate",
-    ShotAccuracy = "shot_accuracy",
-    TacklesSucceeded = "tackles_succeeded",
-}
-
-export interface AccurateLongBalls {
-    key:   AccurateCrossesKey;
-    value: number | string;
-}
-
 export interface Stat {
     value: number;
 }
