@@ -17,7 +17,7 @@ export class MatchDataService {
         matchDataUrl.searchParams.append(this.matchIdParam, matchId)
         try {
             const resp = await this.axios.get(matchDataUrl.href);
-            return resp.data as MatchData;
+            return resp.data;
         } catch (error: any) {
             throw new MatchDataRetrievalError(error.message);
         }

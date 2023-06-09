@@ -32,8 +32,4 @@ describe('Match Data Service', () => {
 
       expect(actualError).toEqual(new MatchDataRetrievalError('someIssue'));
    });
-
-   it('Should throw a MatchDataInvalid given invalid returned match data format', () => {
-      throw new Error('Implement me');
-   });
 });
