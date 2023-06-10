@@ -25,6 +25,40 @@ export function buildMatchOverviewStats(matchData: MatchData, teamId: number): T
         overview.oppositionTeamForm = matchData.content.matchFacts.teamForm[oppositionIndex].map(form => {
             return form.resultString;
         }).join('-');
+        overview.players = matchData.content.lineup.lineup[teamIndex].players.map(players => {
+            return players.map(player => {
+                return {
+                    captain: player.isCaptain,
+                    assists: player.events.as || 0,
+                    goals: player.events.g || 0,
+                    name: player.name.lastName,
+                    number: player.shirt,
+                    position: player.positionStringShort,
+                    rating: player.rating.num,
+                    redCards: player.events.rc || 0,
+                    subInTime: player.timeSubbedOn,
+                    subOutTime: player.timeSubbedOff,
+                    yellowCards: player.events.yc || 0
+                } as PlayerOverview;
+            })
+        });
+        overview.subs = matchData.content.lineup.lineup[teamIndex].bench.filter(benchPlayer => {
+            return benchPlayer.timeSubbedOn !== null;
+        }).map(subbedPlayers => {
+            return {
+                captain: subbedPlayers.isCaptain,
+                assists: subbedPlayers.events.as || 0,
+                goals: subbedPlayers.events.g || 0,
+                name: subbedPlayers.name.lastName,
+                number: subbedPlayers.shirt,
+                position: "Sub",
+                rating: subbedPlayers.rating.num,
+                redCards: subbedPlayers.events.rc || 0,
+                subInTime: subbedPlayers.timeSubbedOn,
+                subOutTime: subbedPlayers.timeSubbedOff,
+                yellowCards: subbedPlayers.events.yc || 0
+            } as PlayerOverview;
+        });
         return overview;
     } catch(e) {
         console.error(e);
@@ -38,6 +72,7 @@ export interface TeamMatchOverviewStats {
     stadium: Stadium;
     matchTime: string;
     players: Array<PlayerOverview[]>;
+    subs: PlayerOverview[];
     referee: string;
     teamForm: string;
     oppositionTeamForm: string;
@@ -50,13 +85,13 @@ export interface PlayerOverview {
     name: string;
     number: number;
     position: string;
-    rating: number;
+    rating: string | null;
     goals: number;
     assists: number;
     yellowCards: number;
     redCards: number;
-    subInTime: number | undefined;
-    subOutTime: number | undefined;
+    subInTime: number | null;
+    subOutTime: number | null;
     captain: boolean;
 }
 

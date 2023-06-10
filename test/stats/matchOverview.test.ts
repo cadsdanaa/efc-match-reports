@@ -9,9 +9,9 @@ const forwardPlayers = [
         name: "Calvert-Lewin",
         number: 9,
         position: "ST",
-        rating: 8.2,
+        rating: "8.2",
         redCards: 0,
-        subInTime: undefined,
+        subInTime: null,
         subOutTime: 87,
         yellowCards: 1,
         captain: false
@@ -24,10 +24,10 @@ const attackingMidPlayers = [
         name: "McNeil",
         number: 7,
         position: "LW",
-        rating: 9.4,
+        rating: "9.4",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: 87,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     },
@@ -37,10 +37,10 @@ const attackingMidPlayers = [
         name: "Doucouré",
         number: 16,
         position: "AM",
-        rating: 9.0,
+        rating: "9.0",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 1,
         captain: false
     },
@@ -50,10 +50,10 @@ const attackingMidPlayers = [
         name: "Iwobi",
         number: 17,
         position: "RW",
-        rating: 8.3,
+        rating: "8.3",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     }
@@ -65,9 +65,9 @@ const defensiveMidPlayers = [
         name: "Gueye",
         number: 27,
         position: "DM",
-        rating: 7.2,
+        rating: "7.2",
         redCards: 0,
-        subInTime: undefined,
+        subInTime: null,
         subOutTime: 87,
         yellowCards: 1,
         captain: false
@@ -78,10 +78,10 @@ const defensiveMidPlayers = [
         name: "Garner",
         number: 37,
         position: "DM",
-        rating: 7.2,
+        rating: "7.2",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     }
@@ -93,10 +93,10 @@ const defensivePlayers = [
         name: "Mykolenko",
         number: 19,
         position: "LB",
-        rating: 7.7,
+        rating: "7.7",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     },
@@ -106,10 +106,10 @@ const defensivePlayers = [
         name: "Tarkowski",
         number: 2,
         position: "CB",
-        rating: 7.6,
+        rating: "7.6",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     },
@@ -119,10 +119,10 @@ const defensivePlayers = [
         name: "Mina",
         number: 13,
         position: "CB",
-        rating: 7.4,
+        rating: "7.4",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 1,
         captain: false
     },
@@ -132,10 +132,10 @@ const defensivePlayers = [
         name: "Patterson",
         number: 3,
         position: "RB",
-        rating: 7.1,
+        rating: "7.1",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: false
     },
@@ -147,12 +147,40 @@ const goalkeeper = [
         name: "Pickford",
         number: 1,
         position: "GK",
-        rating: 8.2,
+        rating: "8.2",
         redCards: 0,
-        subInTime: undefined,
-        subOutTime: undefined,
+        subInTime: null,
+        subOutTime: null,
         yellowCards: 0,
         captain: true
+    }
+] as PlayerOverview[];
+const substitutes = [
+    {
+        assists: 0,
+        goals: 0,
+        name: "Maupay",
+        number: 20,
+        position: "Sub",
+        rating: null,
+        redCards: 0,
+        subInTime: 87,
+        subOutTime: null,
+        yellowCards: 0,
+        captain: false
+    },
+    {
+        assists: 1,
+        goals: 0,
+        name: "Onana",
+        number: 8,
+        position: "Sub",
+        rating: null,
+        redCards: 0,
+        subInTime: 87,
+        subOutTime: null,
+        yellowCards: 1,
+        captain: false
     }
 ] as PlayerOverview[];
 
@@ -176,6 +204,7 @@ describe('Match Overview', () => {
                 defensivePlayers,
                 goalkeeper
             ],
+            subs: substitutes,
             stadium: {
                 name: 'The American Express Community Stadium',
                 city: 'Falmer, East Sussex',

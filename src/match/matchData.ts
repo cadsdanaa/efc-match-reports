@@ -59,7 +59,7 @@ export interface TeamLineup {
 
 export interface PlayerElement {
     id: string;
-    positionStringShort: string | 'Sub'
+    positionStringShort: string;
     name: Name;
     shirt: number;
     imageUrl: string;
