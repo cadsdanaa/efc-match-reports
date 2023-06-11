@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" version="1.1">
+    <g>
+        <g transform="translate(5.117979, 7.041806) rotate(-7.000000) translate(-5.117979, -7.041806) translate(1.117979, 1.041806)" fill="#FF3D3D">
+            <rect id="Rectangle" x="5.24832703e-16" y="3.9587381e-14" width="7.68181818" height="11.6734694" rx="1"/>
+        </g>
+        <g transform="translate(7.240569, 8.155541) rotate(15.000000) translate(-7.240569, -8.155541) translate(3.240569, 2.155541)" fill="#FFD100">
+            <rect id="Rectangle" x="-2.01535758e-13" y="2.92337583e-13" width="7.68181818" height="11.6734694" rx="1"/>
+        </g>
+    </g>
+</svg>
