@@ -5,7 +5,7 @@ export function buildMatchOverviewStats(matchData: MatchData, teamId: number): T
     try {
         const {teamIndex, oppositionIndex} = matchData.header.teams[0].id === teamId
             ? {teamIndex: 0, oppositionIndex: 1} : {teamIndex: 1, oppositionIndex: 0};
-        let overview = {} as TeamMatchOverviewStats;
+        const overview = {} as TeamMatchOverviewStats;
         overview.stadium = {
             attendance: matchData.content.matchFacts.infoBox.Attendance,
             name: matchData.content.matchFacts.infoBox.Stadium.name,
@@ -18,13 +18,13 @@ export function buildMatchOverviewStats(matchData: MatchData, teamId: number): T
         overview.matchTime = matchData.general.matchTimeUTC;
         overview.teamCoach = matchData.content.lineup.coaches.coachesArr[teamIndex][0].name.fullName;
         overview.oppositionCoach = matchData.content.lineup.coaches.coachesArr[oppositionIndex][0].name.fullName;
-        overview.formation = matchData.content.lineup.lineup[teamIndex].lineup.replace(/ /g, '');
+        overview.formation = matchData.content.lineup.lineup[teamIndex].lineup.replace(/ /g, "");
         overview.teamForm = matchData.content.matchFacts.teamForm[teamIndex].map(form => {
             return form.resultString;
-        }).join('-');
+        }).join("-");
         overview.oppositionTeamForm = matchData.content.matchFacts.teamForm[oppositionIndex].map(form => {
             return form.resultString;
-        }).join('-');
+        }).join("-");
         overview.players = matchData.content.lineup.lineup[teamIndex].players.map(players => {
             return players.map(player => {
                 return {
@@ -40,7 +40,7 @@ export function buildMatchOverviewStats(matchData: MatchData, teamId: number): T
                     subOutTime: player.timeSubbedOff,
                     yellowCards: player.events.yc || 0
                 } as PlayerOverview;
-            })
+            });
         });
         overview.subs = matchData.content.lineup.lineup[teamIndex].bench.filter(benchPlayer => {
             return benchPlayer.timeSubbedOn !== null;
@@ -62,7 +62,7 @@ export function buildMatchOverviewStats(matchData: MatchData, teamId: number): T
         return overview;
     } catch(e) {
         console.error(e);
-        throw new MatchOverviewCreationError('Cannot generate Match Overview');
+        throw new MatchOverviewCreationError("Cannot generate Match Overview");
     }
 }
 
