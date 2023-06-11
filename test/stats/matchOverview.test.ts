@@ -1,4 +1,4 @@
-import * as rawMatchData from './testMatchData.json';
+import * as rawMatchData from "./testMatchData.json";
 import {buildMatchOverviewStats, PlayerOverview, TeamMatchOverviewStats} from "../../src/stats/matchOverview";
 import {MatchOverviewCreationError} from "../../src/stats/matchOverviewError";
 
@@ -184,19 +184,19 @@ const substitutes = [
     }
 ] as PlayerOverview[];
 
-describe('Match Overview', () => {
-    it('Should create match overview stats from raw match data', () => {
+describe("Match Overview", () => {
+    it("Should create match overview stats from raw match data", () => {
         const matchData = rawMatchData;
         const expectedMatchOverview: TeamMatchOverviewStats = {
-            matchTime: 'Mon, May 8, 2023, 16:30 UTC',
+            matchTime: "Mon, May 8, 2023, 16:30 UTC",
             teamScore: 5,
             oppositionScore: 1,
-            referee: 'Simon Hooper',
-            teamCoach: 'Sean Dyche',
-            oppositionCoach: 'Roberto De Zerbi',
-            teamForm: 'L-L-D-L-D',
-            oppositionTeamForm: 'W-L-L-W-W',
-            formation: '4-2-3-1',
+            referee: "Simon Hooper",
+            teamCoach: "Sean Dyche",
+            oppositionCoach: "Roberto De Zerbi",
+            teamForm: "L-L-D-L-D",
+            oppositionTeamForm: "W-L-L-W-W",
+            formation: "4-2-3-1",
             players: [
                 forwardPlayers,
                 attackingMidPlayers,
@@ -206,9 +206,9 @@ describe('Match Overview', () => {
             ],
             subs: substitutes,
             stadium: {
-                name: 'The American Express Community Stadium',
-                city: 'Falmer, East Sussex',
-                country: 'England',
+                name: "The American Express Community Stadium",
+                city: "Falmer, East Sussex",
+                country: "England",
                 attendance: 31567
             }
         };
@@ -218,11 +218,11 @@ describe('Match Overview', () => {
         expect(actualOverview).toEqual(expectedMatchOverview);
     });
 
-    it('Should throw a MatchOverviewCreationError if required match data is malformed/missing', () => {
+    it("Should throw a MatchOverviewCreationError if required match data is malformed/missing", () => {
         expect(() => buildMatchOverviewStats({
             content: {} as any,
             header: {} as any,
             general: {} as any
-        }, 8668)).toThrow(new MatchOverviewCreationError('Cannot generate Match Overview'));
+        }, 8668)).toThrow(new MatchOverviewCreationError("Cannot generate Match Overview"));
     });
 });

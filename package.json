@@ -10,7 +10,7 @@
         "watch": "tsc -w",
         "test": "jest",
         "cdk": "cdk",
-        "fix": "eslint --fix src lib bin"
+        "fix": "eslint --fix ."
     },
     "devDependencies": {
         "@types/aws-lambda": "^8.10.115",
