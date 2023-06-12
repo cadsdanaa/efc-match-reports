@@ -1,0 +1,29 @@
+.goodisonWrapper {
+    width: 1000px;
+    height: 1000px;
+    background-image: url('../../other/goodisonPark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.header {
+
+}
+
+.mainStats {
+
+}
+
+.footer {
+
+}
+
+.pitch {
+    width: 320px;
+    height: 200px;
+    background-image: url('../../other/pitch.svg');
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
