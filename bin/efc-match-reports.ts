@@ -6,4 +6,5 @@ import {EfcMatchReportsStack} from "../lib/efc-match-reports-stack";
 const app = new cdk.App();
 new EfcMatchReportsStack(app, "EfcMatchReportsStack", {
     env: {account: "571324972013", region: "us-east-1"},
+    assetBucketName: "cadsdanaa-match-report-assets"
 });
