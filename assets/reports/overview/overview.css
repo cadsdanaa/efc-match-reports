@@ -1,29 +1,61 @@
 .goodisonWrapper {
-    width: 1000px;
-    height: 1000px;
     background-image: url('../../other/goodisonPark.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    width: 1082px;
     z-index: 0;
 }
 
 .header {
+    display: grid;
+    grid-template-columns: 440px 200px 440px;
+    grid-template-rows: 150px;
+}
 
+.homeTeam {
+    text-align: center;
+}
+
+.score {
+    text-align: center;
+}
+
+.awayTeam {
+    text-align: center;
 }
 
 .mainStats {
+    display: grid;
+    grid-template-columns: 640px 442px;
+    grid-template-rows: 400px;
+}
+
+.matchEventsTable {
 
 }
 
-.footer {
+.teamEventsTitle {
 
+}
+
+.homeEvent {
+    text-align: left;
+}
+.awayEvent {
+    text-align: right;
 }
 
 .pitch {
-    width: 320px;
-    height: 200px;
+    width: 640px;
+    height: 410px;
     background-image: url('../../other/pitch.svg');
     background-size: contain;
     z-index: 1;
     background-repeat: no-repeat;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 541px 541px;
+    grid-template-rows: 180px;
 }

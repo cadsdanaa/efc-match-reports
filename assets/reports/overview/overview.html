@@ -4,9 +4,39 @@
     </head>
     <body>
         <div class="goodisonWrapper">
-            <div class="header"></div>
-            <div class="mainStats pitch"></div>
-            <div class="footer"></div>
+            <div class="header">
+                <div class="homeTeam">Brighton</div>
+                <div class="score">1 - 5</div>
+                <div class="awayTeam">Everton</div>
+            </div>
+            <div class="mainStats">
+                <div class="pitch">
+                    {{playersHere}}
+                </div>
+                <div class="matchEventsTable">
+                    <div class="eventsTitle">Match Events</div>
+                    <div class="teamEventsTitle">Brighton - Everton</div>
+                    <div class="events">
+                        <table>
+                            <tr>
+                                <td class="homeEvent"></td>
+                                <td class="awayEvent">Yellow Card - Onana</td>
+                            </tr>
+                            <tr>
+                                <td class="homeEvent"></td>
+                                <td class="awayEvent">Goal - McNeil</td>
+                            </tr>
+                            <tr>
+                                <td class="homeEvent">Goal - Mac Allister</td>
+                                <td class="awayEvent"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                High level stats here like referee rating and stuff
+            </div>
         </div>
     </body>
 </html>
